@@ -29,7 +29,7 @@ const requests = {
   fetchShippden18: `/tv/31910-naruto-shipp-den/season/18?api_key=${API_KEY}&language=en-US`,
   fetchShippden19: `/tv/31910-naruto-shipp-den/season/19?api_key=${API_KEY}&language=en-US`,
   fetchShippden20: `/tv/31910-naruto-shipp-den/season/20?api_key=${API_KEY}&language=en-US`,
-  fetchBoruto: `/tv/70881-boruto-naruto-next-generations/season/1?api_key=${API_KEY}&language=en-US`,
+
 }
 
 export default requests

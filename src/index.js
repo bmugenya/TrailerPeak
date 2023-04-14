@@ -1,18 +1,20 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client';
+import { Provider } from "react-redux";
+import store from "./store";
 import './index.css'
 import 'normalize.css'
 import App from './app'
-import { firebase } from './lib/firebase.prod'
-import { GlobalStyles } from './assets/styles'
-import { FirebaseContext } from './context/firebase'
 
-render(
-  <>
-    <FirebaseContext.Provider value={{ firebase }}>
+import { GlobalStyles } from './assets/styles'
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
+     <Provider store={store}>
       <GlobalStyles />
       <App />
-    </FirebaseContext.Provider>
-  </>,
-  document.getElementById('root')
+     </Provider>
+
 )

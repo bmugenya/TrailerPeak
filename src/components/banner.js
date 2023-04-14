@@ -8,7 +8,7 @@ const Banner = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchBoruto)
+      const request = await axios.get(requests.fetchShippden15)
       console.log(request.data.episodes)
       setMovie(
         request.data.episodes[

@@ -3,7 +3,7 @@ import Row from '../components/Row'
 
 import { React, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Typography, Tabs, Tab, Grow, Box } from '@material-ui/core'
+import { Grid, Typography, Tabs, Tab, Grow, Box } from '@mui/material'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -50,7 +50,7 @@ function Browse() {
         <Tabs value={value} indicatorColor='white' onChange={handleChange}>
           <Tab label='naruto' {...a11yProps(0)} />
           <Tab label='shippuden' {...a11yProps(1)} />
-          <Tab label='boruto' {...a11yProps(2)} />
+          
         </Tabs>
       </Grid>
       <TabPanel value={value} index={0}>
@@ -82,9 +82,7 @@ function Browse() {
         <Row title='Season 19' fetchUrl={requests.fetchShippden19} />
         <Row title='Season 20' fetchUrl={requests.fetchShippden20} />
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Row title='Boruto' fetchUrl={requests.fetchBoruto} />
-      </TabPanel>
+
     </>
   )
 }

@@ -1,32 +1,41 @@
 import { React, useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Header from '../containers/header'
 import { Form } from '../components'
-import { FirebaseContext } from '../context/firebase'
 import * as ROUTES from '../constants/routes'
+import { useForm } from 'react-hook-form'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { authUserAsync } from '../features/user/userActions'
 
 export default function Signin() {
-  const history = useHistory()
+
+  const history = useNavigate()
   const [emailAddress, setEmailAddress] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const { firebase } = useContext(FirebaseContext)
   const isInvalid = password === '' || emailAddress === ''
+const dispatch = useDispatch()
+  const { error } = useSelector((state) => state.user)
+  const { register, handleSubmit, formState: { errors }, } = useForm()
 
   const handleSignIn = (event) => {
     event.preventDefault()
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(emailAddress, password)
-      .then(() => {
-        history.push(ROUTES.BROWSE)
-      })
-      .catch((error) => {
-        setEmailAddress('')
-        setPassword('')
-        setError(error.message)
-      })
+   let data = {
+      'email':emailAddress,
+      'password':password
+    }
+
+    authentication(data)
+
   }
+    const authentication = async (data) => {
+    const auth = await dispatch(authUserAsync(data))
+    const error = auth?.error?.message
+    // !error && history('/')
+
+  }
+
+  
   return (
     <Header>
       <Form>
