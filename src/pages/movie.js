@@ -17,7 +17,7 @@ export default function Mome() {
 
     const disqusShortname = "narutopia-netlify-app"
     const disqusConfig = {
-      url: "http://localhost:3000",
+      url: "https://trailerpeak.onrender.com",
       identifier: "article-id",
       title: "Title of Your Article"
     }
@@ -27,7 +27,7 @@ export default function Mome() {
   
   useEffect(() => {
     // Fetch the magnet data from your Flask server
-    fetch(`http://127.0.0.1:5000/play/${name}`) // Replace with your Flask server endpoint
+    fetch(`https://trailerpeak.onrender.com/play/${name}`) // Replace with your Flask server endpoint
       .then(response => response.json())
      .then(data => {
       console.log(data.video_url)
