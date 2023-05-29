@@ -5,3 +5,36 @@
 .App {
   background-color: #111;
 }
+
+
+.sect{
+display: inline-block;
+line-height: 2.2em;
+margin: 0 2px;
+cursor: pointer;
+font-size: .9em;
+padding: 0 10px;
+border-radius: 3px;
+-webkit-transition: all .2s ease-in-out 0s;
+-moz-transition: all .2s ease-in-out 0s;
+transition: all .2s ease-in-out 0s;
+color: #6c757d;
+background: #212529;
+}
+
+.margin-align{
+
+  margin-top: -11rem;
+z-index: 2;
+position: relative;
+}
+
+.margin-top{
+
+  margin-top: 5rem;
+
+}
+
+p{
+  color: #fff;
+}

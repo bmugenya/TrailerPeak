@@ -31,7 +31,7 @@ const dispatch = useDispatch()
     const authentication = async (data) => {
     const auth = await dispatch(authUserAsync(data))
     const error = auth?.error?.message
-    // !error && history('/')
+     !error && history('/browse')
 
   }
 
@@ -59,7 +59,7 @@ const dispatch = useDispatch()
           </Form.Submit>
         </Form.Base>
         <Form.Text>
-          New to Netflix? <Form.Link to='/signup'>Signup Now</Form.Link>
+          New to TrailerPeak? <Form.Link to='/signup'>Signup Now</Form.Link>
         </Form.Text>
         <Form.TextSmall>
           This page is protected by google reCapture

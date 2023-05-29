@@ -13,9 +13,16 @@ export function SelectProfile({ user, setProfile }) {
       <Profile>
         <Profile.Title>Who's watching?</Profile.Title>
         <Profile.List>
-          <Profile.Item >
-            <Profile.Picture  />
-            <Profile.Name></Profile.Name>
+          <Profile.Item
+            onClick={() => {
+              setProfile({
+                displayName: user?.username,
+                photoUrl: user?.photoURL,
+              })
+            }}
+          >
+            <Profile.Picture src={user?.photoURL} />
+            <Profile.Name>{user?.username}</Profile.Name>
           </Profile.Item>
         </Profile.List>
       </Profile>

@@ -12,9 +12,7 @@ import '../assets/row.css'
 import styled from 'styled-components';
 const base_url = 'https://image.tmdb.org/t/p/original/'
 
-
-
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+const Column = ({ title, fetchUrl, isLargeRow }) => {
   const [open, setOpen] = React.useState(false)
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
@@ -113,8 +111,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     },
   }
 
-
-console.log(movies)
   const handleClick = (movie) => {
     console.log(movie)
     setView(movie)
@@ -183,8 +179,9 @@ console.log(movies)
 
   return (
     <div className='row'>
+      
+      <div className='margin-top'>
       <h2>{title}</h2>
-      <div className='row_posters'>
         {movies?.map((movie) => (
           <img
             key={movie.id}
@@ -207,7 +204,6 @@ console.log(movies)
 
 
             <CustomImg src={`${base_url}${view.poster_path}`} alt={view.name} />
-
             <CustomDialogContentText>
               {view.overview && (
                 <p style={{ fontSize: '16px' }}>
@@ -264,4 +260,4 @@ console.log(movies)
   )
 }
 
-export default Row
+export default Column

@@ -7,6 +7,7 @@ import {
   Title,
   Text,
   Break,
+  Button,
 } from '../assets/footer'
 
 export default function Footer({ children, ...restProps }) {
@@ -23,6 +24,10 @@ Footer.Column = function FooterColumn({ children, ...restProps }) {
 
 Footer.Link = function FooterLink({ children, ...restProps }) {
   return <Link {...restProps}>{children}</Link>
+}
+
+Footer.Button = function FooterButton({ children, ...restProps }) {
+  return <Button {...restProps}>{children}</Button>
 }
 
 Footer.Title = function FooterTitle({ children, ...restProps }) {

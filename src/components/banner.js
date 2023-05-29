@@ -8,11 +8,11 @@ const Banner = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchShippden15)
-      console.log(request.data.episodes)
+      const request = await axios.get(requests.upcoming)
+      console.log(request.data)
       setMovie(
-        request.data.episodes[
-          Math.floor(Math.random() * request.data.episodes.length)
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length)
         ]
       )
       return request
@@ -27,7 +27,7 @@ const Banner = () => {
       className='banner'
       style={{
         backgroundSize: 'cover',
-        backgroundImage: `url("https:image.tmdb.org/t/p/original/${movie?.still_path}")`,
+        backgroundImage: `url("https:image.tmdb.org/t/p/original/${movie?.poster_path}")`,
         backgroundPostion: 'center center',
       }}
     >

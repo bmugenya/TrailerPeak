@@ -1,7 +1,9 @@
 .banner {
   color: white;
   object-fit: contain;
-  height: 448px;
+  flex-shrink: 0;
+  height: 100vh;
+  transition-property: transform;
 }
 
 .banner_contents {
@@ -43,11 +45,11 @@
   background-color: #e6e6e6;
   transition: all 0.2s;
 }
-.banner--fadeBottom {
+/*.banner--fadeBottom {
   height: 7.4rem;
   background-image: linear-gradient(180deg, transparent, rgb(8, 8, 3), #111);
 }
-
+*/
 .title {
   text-align: center;
   color: white;

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/nav.css';
-import Cookies from 'js-cookie';
+import useAuthListener from '../hooks/use-auth-listener'
 
 const Nav = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
-console.log(Cookies.get('token'))
+const { user } = useAuthListener();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,31 +29,36 @@ console.log(Cookies.get('token'))
     }
   };
 
+
+
   return (
     <div className={`nav ${show && 'nav_black'}`}>
+    <a href="/browse" className={'link'}>
+   TrailerPeak
+ </a>
       <img
-        className='nav_logo'
-        src='https://res.cloudinary.com/doammcpie/image/upload/v1618310918/topia_ctxiz9.png'
-        alt='netflix logo'
+        className='nav_avatar'
+        src='https://res.cloudinary.com/doammcpie/image/upload/v1618310958/2_vohnwl.png'
+        alt='naruto logo'
       />
-    
-       
-          <img
-            className='nav_avatar'
-            src='https://res.cloudinary.com/doammcpie/image/upload/v1618310958/2_vohnwl.png'
-            alt='naruto logo'
-          />
-          <div className='list'>
-            <img className='list-img'   alt='naruto logo' />
-            <p></p>
-            <p className='link' onClick={handleSignOut}>
-              Sign Out
-            </p>
-          </div>
-       
-    
-    </div>
-  );
-};
 
-export default Nav;
+   <a href="/series" className={'link'}>
+          Tv Shows
+        </a>
+         <a href="/movies" className={'link'}>
+          Movies
+        </a>
+
+      <div className='list'>
+
+        <img className='list-img' src={user?.photoURL} alt='naruto logo' />
+        <p>{user?.displayName}</p>
+        <p className={'link'} onClick={() => handleSignOut()}>}>
+          SignOut
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export default Nav

@@ -3,22 +3,27 @@ import { Footer } from '../components'
 export default function footer() {
   return (
     <Footer>
-      <Footer.Title>Narutopia</Footer.Title>
+      <Footer.Title>TrailerPeak</Footer.Title>
       <Footer.Row>
         <Footer.Column>
           <Footer.Link href='#'>
-            Narutopia is a streaming website, where you can watch naruto
-            epsiodes online for free.Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.
+          TrailerPeak offers a personalized and immersive movie trailer experience, 
+          catering to the diverse tastes and preferences of film enthusiasts.
+           The website utilizes advanced recommendation algorithms to curate a tailored selection of trailers based on users' viewing history,
+            genre preferences, and ratings. By delivering highly relevant and intriguing trailers,
+             TrailerPeak ensures users discover new movies that resonate with their individual interests.<Footer.Break />
+               <Footer.Button>Share</Footer.Button>
+                 <Footer.Button>Share</Footer.Button>
+                   <Footer.Button>Share</Footer.Button>
           </Footer.Link>
+
+      
+        
+
         </Footer.Column>
       </Footer.Row>
       <Footer.Break />
-      <Footer.Text>Nautopia</Footer.Text>
+      <Footer.Text>This site does not store any files on its server. All contents are provided by non-affiliated third parties.</Footer.Text>
     </Footer>
   )
 }

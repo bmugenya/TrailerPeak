@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
   display: flex;
   padding: 70px 56px;
-  margin: auto;
   max-width: 1000px;
   flex-direction: column;
   @media (max-width: 1000px) {
@@ -48,3 +47,19 @@ export const Break = styled.p`
   flex-basis: 100%;
   height: 0;
 `
+
+export const Button = styled.button`
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
