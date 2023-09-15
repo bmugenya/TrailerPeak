@@ -2,7 +2,7 @@ import React from 'react'
 import { Header } from '../components'
 import * as ROUTES from '../constants/routes'
 import logo from '../logo.png'
-import bg from '../home-CA-bg.jpg'
+import bg from '../banner.jpg'
 export default function HeaderContainer({ children }) {
   return (
     <Header>

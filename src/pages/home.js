@@ -8,8 +8,8 @@ export default function Home() {
     <div>
       <Header>
         <Feature>
-          <Feature.Title>Naruto movies, TV shows, and more.</Feature.Title>
-          <Feature.SubTitle>Watch anywhere. All the time.</Feature.SubTitle>
+          <Feature.Title>TrailerPeak.</Feature.Title>
+          <Feature.SubTitle>your one-stop destination for the hottest and most anticipated movie trailers!.</Feature.SubTitle>
         </Feature>
         <OptForm>
           <OptForm.Text>

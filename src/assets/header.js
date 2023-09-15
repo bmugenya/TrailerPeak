@@ -8,7 +8,7 @@ export const Background = styled.div`
   border-bottom: 8px solid #222;
   background: black;
   background: url(${({ src }) =>
-      src ? `../images/misc/${src}.jpg` : '../images/misc/home-CA-bg.jpg'})
+      src ? `../images/misc/${src}.jpg` : '../images/misc/banner.jpg'})
     top left / cover no-repeat;
   background: linear-gradient(
       to top,
@@ -17,7 +17,7 @@ export const Background = styled.div`
       rgba(0, 0, 0, 0.8) 100%
     ),
     url(${({ src }) =>
-        src ? `../images/misc/${src}.jpg` : '../images/misc/home-CA-bg.jpg'})
+        src ? `../images/misc/${src}.jpg` : '../images/misc/banner.jpg'})
       top left / cover no-repeat;
 `
 
