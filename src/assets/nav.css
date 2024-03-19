@@ -4,10 +4,22 @@
   width: 100%;
   padding: 20px;
   height: 30px;
-
+ object-fit: contain;
   transition-timing-function: ease-in;
   transition: all 0.5s;
 }
+
+.nav_find {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+ object-fit: contain;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
 .nav_black {
   background-color: #111;
 }

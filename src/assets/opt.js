@@ -4,8 +4,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
-  width: 100%;
-  margin-top: 20px;
+
+  margin-top: 0px;
   flex-wrap: wrap;
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -18,14 +18,14 @@ export const Input = styled.input`
   width: 100%;
   border: 0;
   padding: 15px;
-  height: 70px;
+  height: 60px;
   box-sizing: border-box;
 `
 
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 60px;
   background: #e50914;
   color: white;
   text-transform: uppercase;

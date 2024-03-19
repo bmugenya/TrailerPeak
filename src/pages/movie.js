@@ -7,13 +7,12 @@ import styled from 'styled-components/macro'
 import Disqus from "disqus-react"
 import YouTube from 'react-youtube';
 import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import videos from '../utils/data'
 
 
 export default function Mome() {
 
-
-
-  const [magnetData, setMagnetData] = useState(null);
 
     const disqusShortname = "narutopia-netlify-app"
     const disqusConfig = {
@@ -21,50 +20,29 @@ export default function Mome() {
       identifier: "article-id",
       title: "Title of Your Article"
     }
+
+
+
+
   const { name } = useParams();
-
-  console.log(name)
-  
-  useEffect(() => {
-    // Fetch the magnet data from your Flask server
-    fetch(`https://trailerpeak.onrender.com/play/${name}`) // Replace with your Flask server endpoint
-      .then(response => response.json())
-     .then(data => {
-      console.log(data.video_url)
-        const magnetLink = data.video_url.split('v=')[1]; // Replace with the key for your magnet link in the JSON data
-        setMagnetData(magnetLink);
-      })
-      .catch(error => console.error('Error fetching magnet data:', error));
-  }, []);
-
-  const videoRef = useRef(null);
+const selectedVideo = videos.find(video => video.title === name);
 
   return (
-    <div>
-
-  <Feature>
- 
-      <Feature.Title>
-{ name}
-      </Feature.Title>
- 
-      <YouTube videoId={magnetData} />
-  
-
-  <Disqus.DiscussionEmbed
-          shortname={disqusShortname}
-          config={disqusConfig}
-        />
-    
-
-
-
-  
-        </Feature>
-
-
-
-
+  <div>
+      <Feature>
+        <Feature.Title>{name}</Feature.Title>
+        {selectedVideo && (
+          <iframe
+        title={selectedVideo.title}
+        src={selectedVideo.videoURL}
+        frameBorder="0"
+        height="481"
+        width="608"
+        scrolling="no"
+      ></iframe>
+        )}
+      
+      </Feature>
     </div>
   )
 }
